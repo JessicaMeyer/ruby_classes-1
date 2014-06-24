@@ -5,23 +5,51 @@ Kernel.puts("Hello World") # ruby class.rb in terminal => Hello World
 #PET EXERCISE 
 
 class Pet
-	def speak
-		Kernel.puts("Woof Woof")
+	def speak(sound)
+		puts "I make this #{sound}"
 	end
 
-	def eat
-		Kernel.puts("I like to #{eat} food")
+	def eat(food)
+		puts "I like to eat #{food}"
 	end
 
-	def drink
-		Kernel.puts("water")
+	def drink(drink)
+		puts "I drink #{drink}"
 	end
 end
 
 dog = Pet.new
-dog.speak
-dog.eat
-dog.drink
+dog.speak("hi")
+dog.eat("dog food")
+dog.drink("water")
+
+#another pet exercise
+
+class Pet
+	attr_accessor :speak, :eat, :drink
+	def initialize(speak, eat, drink)
+		@speak=speak
+		@eat=eat
+		@drink=drink
+	end
+	def speak
+		@speak
+	end
+	def eat
+		@eat
+	end
+	def drink
+		@drink
+		Kernel.puts "I make this #{@speak}, I like to eat #{@eat}, and this is what I drink: #{@drink}."
+
+	end
+end
+
+dog=Pet.new("ruff ruff", "dog food", "water yo")
+puts dog.speak
+puts dog.eat
+puts dog.drink
+
 
 #MARKER EXERCISE 
 
@@ -85,6 +113,21 @@ cat.animal("cat")
 #I am a dog and I make this sound: bark.
 #I am a cat and I make this sound: meow.
 
+#question from technical interview prep on classes
+
+class Car
+	def color(car_color)
+		@color = car_color
+	end
+	def repaint_count(paint)
+		@repaint_count = paint
+		Kernel.puts("This car color is #{@color} and it's been repainted #{@repaint_count} times.")
+end
+end
+
+c = Car.new
+c.color("red")
+c.repaint_count(5)
 
 #EXTENSIONS
 #Convert the following methods to use the send method.
