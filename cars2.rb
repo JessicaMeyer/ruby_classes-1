@@ -45,3 +45,10 @@ car_a.drive(200)
 car_b.drive(75)
 puts car_a
 puts car_b
+car_b.fuel_up
+
+# I'm a car! I've driven 10 miles and have 10 gallons left in my tank.
+# I'm a car! I've driven 0 miles and have 10 gallons left in my tank.
+# I'm a car! I've driven 210 miles and have 0 gallons left in my tank.
+# I'm a car! I've driven 75 miles and have 7 gallons left in my tank.
+# To fill up your tank, you must pay $10.5
